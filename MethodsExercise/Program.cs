@@ -2,7 +2,7 @@
 {
     public class Program
     {
-        
+
         public static void MadLib()
         {
             Console.WriteLine("What is your name?");
@@ -35,7 +35,16 @@
 
         public static int Divide(int numOne, int numTwo)
         {
-            return numOne / numTwo;
+            
+            if (numTwo == 0)
+            {
+                Console.WriteLine("You can't divide by zero!");
+            }
+            else
+            {
+                return numOne / numTwo;
+            }
+            return 0;
         }
 
         public static int Sum(params int[] numbers)
@@ -47,12 +56,15 @@
             }
             return sum;
         }
+        
         public static void Main(string[] args)
         {
+            MadLib();
+            
             Console.WriteLine(Add(2, 2));
             Console.WriteLine(Subtract(2, 2));
             Console.WriteLine(Multiply(3, 4));
-            Console.WriteLine(Divide(2,2));
+            Console.WriteLine(Divide(2,0));
             Console.WriteLine(Sum(2,4,2,4,6,1,1,1,1,1));
         }
         
